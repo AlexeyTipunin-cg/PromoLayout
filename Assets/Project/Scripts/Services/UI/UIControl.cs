@@ -14,6 +14,7 @@ namespace RedPanda.Project.Services.UI
             _view = Object.Instantiate(Resources.Load<View>($"UI/{viewName}"), parent.transform);
             _view.name = viewName;
             _exportLocatorScope.Inject(_view);
+            _view.OnShow();
         }
 
         public void Close()

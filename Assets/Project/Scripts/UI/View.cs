@@ -9,12 +9,17 @@ namespace RedPanda.Project.UI
     {
         protected IUIService UIService { get; private set; }
         protected IExportLocatorScope Container { get; private set; }
-        
+
         [Import]
         public void Inject(IExportLocatorScope container, IUIService uiService)
         {
             UIService = uiService;
             Container = container;
+        }
+
+        public virtual void OnShow()
+        {
+
         }
     }
 }
