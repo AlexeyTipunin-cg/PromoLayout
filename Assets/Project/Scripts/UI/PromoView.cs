@@ -60,7 +60,7 @@ namespace RedPanda.Project.UI
             }
             else
             {
-                Debug.Log($"NOT ENOUGH CURRENCY TO BUY {model.Title}");
+                Debug.LogError($"NOT ENOUGH CURRENCY TO BUY {model.Title}");
             }
         }
 
