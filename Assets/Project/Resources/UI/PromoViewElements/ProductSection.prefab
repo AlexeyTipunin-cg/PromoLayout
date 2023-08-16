@@ -137,7 +137,7 @@ MonoBehaviour:
   m_text: CHESTS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c213223f8c0bfe84c8ee82d502c342ce, type: 2}
-  m_sharedMaterial: {fileID: 3474113822662488546, guid: c213223f8c0bfe84c8ee82d502c342ce, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 539533e356b0dd24ca1d8ee6e21f0f34, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00022888184}
-  m_SizeDelta: {x: 0.0001, y: 0.0005188}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.00012207, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7083073620046755745
 MonoBehaviour:
