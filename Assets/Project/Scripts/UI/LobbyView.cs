@@ -13,16 +13,13 @@ namespace RedPanda.Project.UI
         private void Awake()
         {
             _startButton.onClick.AddListener(OnStartClick);
-            //Example for services
-            //var promoService = Container.Locate<IPromoService>();
-            //UIService.Close();
         }
 
         private void OnStartClick()
         {
             var uiService = Container.Locate<IUIService>();
             uiService.Close(gameObject.name);
-            uiService.Show(UINames.PROMO_VIEW);
+            uiService.Show(GameViews.PROMO_VIEW);
         }
     }
 }

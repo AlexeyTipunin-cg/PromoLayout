@@ -22,7 +22,7 @@ namespace RedPanda.Project
 
             _container.Locate<IUserService>();
             _container.Locate<IPromoService>();
-            _container.Locate<IUIService>().Show(UINames.LOBBY_VIEW);
+            _container.Locate<IUIService>().Show(GameViews.LOBBY_VIEW);
         }
     }
 }
