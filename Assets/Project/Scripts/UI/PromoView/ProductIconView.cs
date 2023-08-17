@@ -23,13 +23,12 @@ namespace RedPanda.Project.Assets.Project.Scripts.UI.PromoView
 
         private IPromoModel _productModel;
 
-
-        public void Init(IPromoModel model)
+        public void Init(IPromoModel model, string spritesFolder)
         {
             _productModel = model;
 
-            _productBack.sprite = Resources.Load<Sprite>("Sprites/background_" + model.Rarity.ToString().ToLower());
-            _productIcon.sprite = Resources.Load<Sprite>("Sprites/" + model.GetIcon());
+            _productBack.sprite = Resources.Load<Sprite>(spritesFolder + $"background_{model.Rarity.ToString().ToLower()}");
+            _productIcon.sprite = Resources.Load<Sprite>(spritesFolder + model.GetIcon());
             _productName.text = model.Title.ToUpper();
             _cost.text = "x" + model.Cost.ToString();
         }

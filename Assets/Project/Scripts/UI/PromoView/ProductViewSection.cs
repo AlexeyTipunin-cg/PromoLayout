@@ -9,6 +9,8 @@ namespace RedPanda.Project.Assets.Project.Scripts.UI.PromoView
 {
     public class ProductViewSection : MonoBehaviour
     {
+        private const string SPRITES_FOLDER = "Sprites/";
+        
         [SerializeField] private Transform _content;
         [SerializeField] private ProductIconView _iconViewPrefab;
         [SerializeField] private TMP_Text _sectionTitle;
@@ -25,7 +27,7 @@ namespace RedPanda.Project.Assets.Project.Scripts.UI.PromoView
             foreach (var product in productModels)
             {
                 var icon = Instantiate(_iconViewPrefab, _content);
-                icon.Init(product);
+                icon.Init(product, SPRITES_FOLDER);
                 icon.OnBuyClick += onBuyAction;
             }
         }

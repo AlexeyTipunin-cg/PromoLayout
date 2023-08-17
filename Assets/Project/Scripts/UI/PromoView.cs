@@ -30,19 +30,28 @@ namespace RedPanda.Project.UI
             var promosData = promoService.GetPromos();
 
             var chestData = promosData.Where(p => p.Type == Data.PromoType.Chest).OrderByDescending(p => p.Rarity).ThenByDescending(p => p.Cost).ToList();
-            var section = Instantiate(_iconView, _sectionsParent);
-            section.Title = "CHESTS";
-            section.SetupIcons(chestData, OnBuyProduct);
+            if (chestData.Count > 0)
+            {
+                var section = Instantiate(_iconView, _sectionsParent);
+                section.Title = "CHESTS";
+                section.SetupIcons(chestData, OnBuyProduct);
+            }
 
             var inAppData = promosData.Where(p => p.Type == Data.PromoType.InApp).OrderByDescending(p => p.Rarity).ThenByDescending(p => p.Cost).ToList();
-            section = Instantiate(_iconView, _sectionsParent);
-            section.Title = "CRYSTALS";
-            section.SetupIcons(inAppData, OnBuyProduct);
+            if (inAppData.Count > 0)
+            {
+                var section = Instantiate(_iconView, _sectionsParent);
+                section.Title = "CRYSTALS";
+                section.SetupIcons(inAppData, OnBuyProduct);
+            }
 
             var specialsData = promosData.Where(p => p.Type == Data.PromoType.Special).OrderByDescending(p => p.Rarity).ThenByDescending(p => p.Cost).ToList();
-            section = Instantiate(_iconView, _sectionsParent);
-            section.Title = "SPECIALS";
-            section.SetupIcons(specialsData, OnBuyProduct);
+            if (specialsData.Count > 0)
+            {
+                var section = Instantiate(_iconView, _sectionsParent);
+                section.Title = "SPECIALS";
+                section.SetupIcons(specialsData, OnBuyProduct);
+            }
         }
 
         private void OnCurrencyUpdate(int value)
@@ -52,7 +61,7 @@ namespace RedPanda.Project.UI
 
         private void OnBuyProduct(IPromoModel model)
         {
-            var user  = Container.Locate<IUserService>();
+            var user = Container.Locate<IUserService>();
             if (user.HasCurrency(model.Cost))
             {
                 user.ReduceCurrency(model.Cost);
@@ -67,7 +76,10 @@ namespace RedPanda.Project.UI
         private void OnDisable()
         {
             var user = Container.Locate<IUserService>();
-            user.OnUpdateCurrency -= OnCurrencyUpdate;
+            if(user != null)
+            {
+                user.OnUpdateCurrency -= OnCurrencyUpdate;
+            }
         }
     }
 }
