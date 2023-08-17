@@ -443,39 +443,8 @@ MonoBehaviour:
   _productIcon: {fileID: 4308587924625747669}
   _cost: {fileID: 5858152318635654116}
   _productName: {fileID: 3212094235578168671}
-  _scaleCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.10172721
-      outSlope: 0.10172721
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.4992162
-      value: 1.0507839
-      inSlope: 0.00015921518
-      outSlope: 0.00015921518
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: -0.10140878
-      outSlope: -0.10140878
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  _clickScale: 1.04
+  _scaleDuaration: 0.2
 --- !u!1 &8972484704162297576
 GameObject:
   m_ObjectHideFlags: 0
